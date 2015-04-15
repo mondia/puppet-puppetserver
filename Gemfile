@@ -2,7 +2,7 @@ source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
 group :development, :unit_tests do
   gem 'rake',                                              :require => false
-  gem 'rspec', '~> 3.1.0',                                 :require => false
+  gem 'rspec', '< 3.2',                                    :require => false if RUBY_VERSION =~ /^1.8/
   gem 'rspec-puppet',                                      :require => false
   gem 'puppetlabs_spec_helper',                            :require => false
   gem 'metadata-json-lint',                                :require => false
@@ -17,6 +17,7 @@ group :development, :unit_tests do
   gem 'puppet-lint-trailing_comma-check',                  :require => false
   gem 'puppet-lint-file_ensure-check',                     :require => false
   gem 'puppet-lint-version_comparison-check',              :require => false
+  gem 'puppet-lint-fileserver-check',                      :require => false
   gem 'rspec-puppet-facts',                                :require => false
 end
 
